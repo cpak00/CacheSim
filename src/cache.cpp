@@ -8,6 +8,8 @@ TensorCache::TensorCache(int capacity): capacity(capacity), iter_cur(0),
 
 TensorCache::~TensorCache()
 {
+    this->data_map.clear();
+    delete[] this->iter_list;
 }
 
 CacheMap::iterator TensorCache::match(TensorTag tag)
